@@ -1,0 +1,27 @@
+<form (submit)="addReview(restaurant._id)">
+  <p class="error" *ngFor="let e of errorMessages">{{e}}</p>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label>Your Name</label>
+      <input type="text" class="form-control" name="name" [(ngModel)]="newReview.name">
+    </div>
+    <div class="form-group col-md-6">
+      <label>Your review</label>
+      <input type="text" class="form-control" name="review" [(ngModel)]="newReview.review">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">Stars</label>
+      <select id="inputState" class="form-control" name="stars"[(ngModel)]="newReview.stars">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <br>
+  <br>
+  <button type="submit" class="btn btn-primary">Cancel</button>
+</form>
